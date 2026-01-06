@@ -2,222 +2,1207 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Prosperity Party – Member Registration</title>
+    <title>ኮልፌ ቀራኒዮ ወረዳ01 ክፍለከተማብልጽና ፓርቲ ጽ/ቤት – አባላት ምዝገባ</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg">
 
 <header>
     <img src="logo.png.png" class="logo">
-    <h1>Prosperity Party – Ethiopia</h1>
-    <p>Public Relations & Membership Registration</p>
+    <h1>Prosperity Party – አዲስ አበባ</h1>
+    <p>ህዝብ ግ ንኙነት እና & አባላት ምዝገባ</p>
+</header>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>e>ኮልፌ ቀራኒዮ ወረዳ01 ክፍለከተማብልጽና ፓርቲ ጽ/ቤት - >ህዝብ ግ ንኙነት እና & አባላት ምዝገባ</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
 
-        <main>
-            <div class="registration-container">
-                <div class="form-header">
-                    <h3><i class="fas fa-user-plus"></i> New Member Registration</h3>
-                    <p>Please fill in all required details accurately</p>
+        :root {
+            --primary-color: #FFCC00;
+            --secondary-color: #006747;
+            --accent-color: #DA291C;
+            --light-color: #F5F5F5;
+            --dark-color: #333333;
+        }
+
+        body {
+            background-color: #f8f9fa;
+            color: var(--dark-color);
+            line-height: 1.6;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, var(--secondary-color) 0%, #004d33 100%);
+            color: white;
+            padding: 15px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-img {
+            width: 60px;
+            height: 60px;
+            background: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--secondary-color);
+            font-weight: bold;
+        }
+
+        .logo-text h1 {
+            font-size: 24px;
+            margin-bottom: 5px;
+        }
+
+        .logo-text p {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 16px;
+            padding: 8px 12px;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+        }
+
+        nav a:hover, nav a.active {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+
+        /* Main Content Styles */
+        .main-content {
+            padding: 40px 0;
+            min-height: calc(100vh - 180px);
+        }
+
+        .page {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .page.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        .page-title {
+            color: var(--secondary-color);
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--primary-color);
+            font-size: 32px;
+        }
+
+        /* Home Page */
+        .hero {
+            background: linear-gradient(rgba(0, 103, 71, 0.9), rgba(0, 103, 71, 0.8)), url('https://images.unsplash.com/photo-1559028012-481c04fa702d?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            border-radius: 10px;
+            margin-bottom: 40px;
+        }
+
+        .hero h2 {
+            font-size: 42px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 18px;
+            max-width: 800px;
+            margin: 0 auto 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+            padding: 12px 28px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #ffd633;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+            border-top: 5px solid var(--accent-color);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+            font-size: 22px;
+        }
+
+        /* Registration Page */
+        .registration-form {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary-color);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #ddd;
+            border-radius: 6px;
+            font-size: 16px;
+            transition: border 0.3s ease;
+        }
+
+        .form-control:focus {
+            border-color: var(--secondary-color);
+            outline: none;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .photo-upload {
+            border: 2px dashed #ddd;
+            border-radius: 6px;
+            padding: 30px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .photo-upload:hover {
+            border-color: var(--secondary-color);
+            background-color: rgba(0, 103, 71, 0.03);
+        }
+
+        .photo-upload i {
+            font-size: 40px;
+            color: var(--secondary-color);
+            margin-bottom: 15px;
+        }
+
+        .error-message {
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-top: 5px;
+            display: none;
+        }
+
+        .success-message {
+            background-color: #d4edda;
+            color: #155724;
+            padding: 15px;
+            border-radius: 6px;
+            margin-bottom: 20px;
+            display: none;
+        }
+
+        .member-id-display {
+            background-color: #e7f4ff;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 20px;
+            text-align: center;
+            font-size: 18px;
+            display: none;
+        }
+
+        .member-id-display strong {
+            color: var(--secondary-color);
+            font-size: 24px;
+        }
+
+        /* Admin Page */
+        .admin-login {
+            background: white;
+            border-radius: 10px;
+            padding: 40px;
+            box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .admin-panel {
+            display: none;
+        }
+
+        .admin-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid var(--primary-color);
+        }
+
+        .admin-actions {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .search-box {
+            flex-grow: 1;
+        }
+
+        .members-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .members-table th {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .members-table td {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        .members-table tr:hover {
+            background-color: rgba(0, 103, 71, 0.05);
+        }
+
+        .action-btn {
+            padding: 6px 12px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            font-weight: 600;
+            margin-right: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .edit-btn {
+            background-color: var(--primary-color);
+            color: var(--secondary-color);
+        }
+
+        .delete-btn {
+            background-color: var(--accent-color);
+            color: white;
+        }
+
+        .action-btn:hover {
+            opacity: 0.9;
+            transform: scale(1.05);
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: var(--secondary-color);
+            color: white;
+            padding: 40px 0 20px;
+            margin-top: 50px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .footer-section h3 {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .footer-section ul {
+            list-style: none;
+        }
+
+        .footer-section ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-section a {
+            color: #ddd;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-section a:hover {
+            color: var(--primary-color);
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            opacity: 0.8;
+        }
+
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            max-height: 90vh;
+            overflow-y: auto;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .close-modal {
+            float: right;
+            font-size: 24px;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            nav ul {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+            
+            .form-row {
+                grid-template-columns: 1fr;
+            }
+            
+            .admin-header {
+                flex-direction: column;
+                gap: 15px;
+                align-items: flex-start;
+            }
+            
+            .admin-actions {
+                flex-direction: column;
+            }
+            
+            .members-table {
+                display: block;
+                overflow-x: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <div class="logo-img">EPP</div>
+                <div class="logo-text">
+                    <h1>የኮልፌ ቀራኒዮ ክፍለ/ከተማ ወረዳ 01 ብልጽግና ፓርቲ ጽ/ቤት</h1>
+                    <p>አንድነት, ዲሞክራሲ እና እድገት</p>
                 </div>
-
-                <form id="registrationForm" enctype="multipart/form-data">
-                    <div class="form-section">
-                        <h4><i class="fas fa-id-card"></i> Personal Information</h4>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="firstName"><i class="fas fa-user"></i> First Name *</label>
-                                <input type="text" id="firstName" name="firstName" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="middleName"><i class="fas fa-user"></i> Middle Name</label>
-                                <input type="text" id="middleName" name="middleName">
-                            </div>
-                            <div class="form-group">
-                                <label for="lastName"><i class="fas fa-user"></i> Last Name *</label>
-                                <input type="text" id="lastName" name="lastName" required>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="gender"><i class="fas fa-venus-mars"></i> Gender *</label>
-                                <select id="gender" name="gender" required>
-                                    <option value="">Select Gender</option>
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="dateOfBirth"><i class="fas fa-birthday-cake"></i> Date of Birth *</label>
-                                <input type="date" id="dateOfBirth" name="dateOfBirth" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="nationality"><i class="fas fa-flag"></i> Nationality *</label>
-                                <input type="text" id="nationality" name="nationality" value="Ethiopian" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h4><i class="fas fa-address-book"></i> Contact Information</h4>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="phone"><i class="fas fa-phone"></i> Phone Number *</label>
-                                <input type="tel" id="phone" name="phone" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="email"><i class="fas fa-envelope"></i> Email Address</label>
-                                <input type="email" id="email" name="email">
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label for="address"><i class="fas fa-home"></i> Full Address *</label>
-                                <textarea id="address" name="address" rows="3" required></textarea>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="region"><i class="fas fa-map-marker-alt"></i> Region *</label>
-                                <select id="region" name="region" required>
-                                    <option value="">Select Region</option>
-                                    <option value="addis_ababa">Addis Ababa</option>
-                                    <option value="oromia">Oromia</option>
-                                    <option value="amhara">Amhara</option>
-                                    <option value="tigray">Tigray</option>
-                                    <option value="snnpr">SNNPR</option>
-                                    <option value="afar">Afar</option>
-                                    <option value="somali">Somali</option>
-                                    <option value="benishangul">Benishangul-Gumuz</option>
-                                    <option value="gambela">Gambela</option>
-                                    <option value="harari">Harari</option>
-                                    <option value="sidama">Sidama</option>
-                                    <option value="south_west">South West Ethiopia</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="city"><i class="fas fa-city"></i> City/Town *</label>
-                                <input type="text" id="city" name="city" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="subcity"><i class="fas fa-map-pin"></i> Subcity/Woreda *</label>
-                                <input type="text" id="subcity" name="subcity" required>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h4><i class="fas fa-briefcase"></i> Professional Information</h4>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="occupation"><i class="fas fa-user-tie"></i> Occupation *</label>
-                                <input type="text" id="occupation" name="occupation" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="education"><i class="fas fa-graduation-cap"></i> Education Level *</label>
-                                <select id="education" name="education" required>
-                                    <option value="">Select Education</option>
-                                    <option value="primary">Primary School</option>
-                                    <option value="secondary">Secondary School</option>
-                                    <option value="diploma">Diploma</option>
-                                    <option value="bachelor">Bachelor's Degree</option>
-                                    <option value="master">Master's Degree</option>
-                                    <option value="phd">PhD</option>
-                                    <option value="other">Other</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="workplace"><i class="fas fa-building"></i> Workplace/Institution</label>
-                                <input type="text" id="workplace" name="workplace">
-                            </div>
-                            <div class="form-group">
-                                <label for="position"><i class="fas fa-user-tag"></i> Position/Role</label>
-                                <input type="text" id="position" name="position">
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-section">
-                        <h4><i class="fas fa-camera"></i> Member Photo</h4>
-                        
-                        <div class="form-row">
-                            <div class="form-group full-width">
-                                <label for="photo"><i class="fas fa-image"></i> Upload Passport Photo *</label>
-                                <div class="file-upload">
-                                    <input type="file" id="photo" name="photo" accept="image/*" required>
-                                    <div class="upload-area">
-                                        <i class="fas fa-cloud-upload-alt"></i>
-                                        <p>Click to upload or drag and drop</p>
-                                        <p class="file-info">Maximum file size: 2MB</p>
-                                    </div>
-                                </div>
-                                <div id="photoPreview" class="photo-preview"></div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="form-actions">
-                        <button type="submit" class="btn btn-register">
-                            <i class="fas fa-user-check"></i> Register Member
-                        </button>
-                        <button type="reset" class="btn btn-reset">
-                            <i class="fas fa-redo"></i> Clear Form
-                        </button>
-                    </div>
-                </form>
             </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="nav-link active" data-page="home">Home</a></li>
+                    <li><a href="#" class="nav-link" data-page="about">ስለእኛ</a></li>
+                    <li><a href="#" class="nav-link" data-page="register">አባላት መመዝገቢያ</a></li>
+                    <li><a href="#" class="nav-link" data-page="admin">Admin Login</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-            <div class="member-lookup">
-                <h3><i class="fas fa-search"></i> Member Information Lookup</h3>
-                <div class="lookup-form">
-                    <input type="text" id="memberIdLookup" placeholder="Enter Member ID">
-                    <button onclick="lookupMember()" class="btn btn-lookup">
-                        <i class="fas fa-search"></i> Search Member
-                    </button>
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Home Page -->
+            <section id="home" class="page active">
+                <div class="hero">
+                    <h2>እንኳን ወደ ኮልፌቀራኒዮ ክፍለከተማ ወረዳ 01 ብልጽግና ፓርቲ ጽ/ቤት በደህና መጡ</h2>
+                    <p>Building a prosperous Ethiopia through unity, democracy, and sustainable development. Join us in shaping the future of our nation.</p>
+                    <a href="#" class="btn nav-link" data-page="register">አባል ይሁኑ</a>
                 </div>
-                <p class="admin-link">
-                    <a href="admin.html"><i class="fas fa-lock"></i> Admin Login</a>
-                </p>
+                
+                <h2 class="page-title">ራዕዮቻችን እና እንቅስቃሴዎቻችን</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-handshake"></i>
+                        </div>
+                        <h3>የህዝብ ግንኙነት</h3>
+                        <p>We maintain transparent communication with the public, sharing our vision, achievements, and plans for Ethiopia's development.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>አባላት ማስተዳደሪያ</h3>
+                        <p>Our comprehensive member registration system ensures organized growth and engagement with party members across Ethiopia.</p>
+                    </div>
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>እመርታ እና እድገት</h3>
+                        <p>We track and showcase our contributions to Ethiopia's development across all sectors and regions.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About Page -->
+            <section id="about" class="page">
+                <h2 class="page-title">ስለ ኮልፌ ቀራኒዮ ወረዳ 01 ብልጽኛ ፓርቲ ጽ/ቤት</h2>
+                <div class="registration-form">
+                    <p>The Ethiopian Prosperity Party is a political organization committed to the unity, sovereignty, and development of Ethiopia. Founded on principles of democracy, equality, and social justice, our party works tirelessly to improve the lives of all Ethiopians.</p>
+                    
+                    <h3 style="color: var(--secondary-color); margin: 25px 0 15px;">Our Core Values</h3>
+                    <ul style="padding-left: 20px; margin-bottom: 20px;">
+                        <li>National Unity and Territorial Integrity</li>
+                        <li>Democratic Governance and Rule of Law</li>
+                        <li>Economic Prosperity for All Citizens</li>
+                        <li>Social Justice and Equal Opportunity</li>
+                        <li>Environmental Sustainability</li>
+                    </ul>
+                    
+                    <h3 style="color: var(--secondary-color); margin: 25px 0 15px;">Contact Information</h3>
+                    <p><strong>Address:</strong> Addis Ababa, Ethiopia</p>
+                    <p><strong>Email:</strong> info@prosperityparty.et</p>
+                    <p><strong>Phone:</strong> +251 11 123 4567</p>
+                </div>
+            </section>
+
+            <!-- Registration Page -->
+            <section id="register" class="page">
+                <h2 class="page-title">አባላት መመዝገቢያ</h2>
+                
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i> ምዝገባው ተሳክቷል! Your Member ID has been generated.
+                </div>
+                
+                <div class="registration-form">
+                    <form id="registrationForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="firstName">የመጀመሪያ ስም *</label>
+                                <input type="text" id="firstName" class="form-control" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="lastName">የአያት ስም *</label>
+                                <input type="text" id="lastName" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="email">የኢሜል አድራሻ *</label>
+                                <input type="email" id="email" class="form-control" required>
+                                <div class="error-message" id="emailError">This email is already registered!</div>
+                            </div>
+                            <div class="form-group">
+                                <label for="phone">ስልክ ቁጥር *</label>
+                                <input type="tel" id="phone" class="form-control" required>
+                                <div class="error-message" id="phoneError">ይህ ስልክ ቁጥር ቀድሞ የተመዘገበ ነው!</div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="region">ክልል *</label>
+                                <select id="region" class="form-control" required>
+                                    <option value="">ክልል ይምረጡ</option>
+                                    <option value="addis-ababa">አዲስ አበባ</option>
+                                    <option value="afar">አፋር</option>
+                                    <option value="amhara">አማራ</option>
+                                    <option value="benishangul">ቤንሻንጉል ጉሙዝ</option>
+                                    <option value="dire-dawa">ድሬዳዋ</option>
+                                    <option value="gambela">ጋምቤላ</option>
+                                    <option value="harari">ሀረሪ</option>
+                                    <option value="oromia">ኦሮሚያ</option>
+                                    <option value="sidama">ሲዳማ</option>
+                                    <option value="somali">ሶማሊ</option>
+                                    <option value="south-west">ደቡብ ምእራብ ኢትዮጲያ</option>
+                                    <option value="tigray">ትግራይ</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="dob">የትውልድ ዘመን *</label>
+                                <input type="date" id="dob" class="form-control" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="address">አድራሻ</label>
+                            <textarea id="address" class="form-control" rows="3"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label>ፎቶ ያስገቡ *</label>
+                            <div class="photo-upload" id="photoUpload">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                                <p>Click to upload your photo (JPEG or PNG, max 5MB)</p>
+                                <input type="file" id="photo" accept="image/*" style="display: none;">
+                                <div id="fileName" style="margin-top: 10px; font-weight: 600;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <button type="submit" class="btn" style="width: 100%; padding: 15px;">Register as Member</button>
+                        </div>
+                    </form>
+                    
+                    <div class="member-id-display" id="memberIdDisplay">
+                        <p>Your registration is complete! Your Member ID is:</p>
+                        <p><strong id="generatedMemberId">EPP-0000</strong></p>
+                        <p>Please save this ID for future reference.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Admin Page -->
+            <section id="admin" class="page">
+                <div id="adminLogin">
+                    <h2 class="page-title">Admin Login</h2>
+                    <div class="admin-login">
+                        <form id="loginForm">
+                            <div class="form-group">
+                                <label for="username">የመተቀሚያ ስም</label>
+                                <input type="text" id="username" class="form-control" value="admin" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="password">ይለፍቃል</label>
+                                <input type="password" id="password" class="form-control" value="password123" required>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn" style="width: 100%;">Login</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <div id="adminPanel" class="admin-panel">
+                    <div class="admin-header">
+                        <h2 class="page-title">አባላት መከታተያ</h2>
+                        <div>
+                            <button class="btn" id="changeCredentialsBtn">Change Username/Password</button>
+                            <button class="btn" id="logoutBtn" style="background-color: var(--accent-color); color: white;">Logout</button>
+                        </div>
+                    </div>
+                    
+                    <div class="admin-actions">
+                        <div class="search-box">
+                            <input type="text" id="searchMember" class="form-control" placeholder="አባሉን በስም ወይም በ መለያ ቁጥር ይፈልጉ...">
+                        </div>
+                        <button class="btn" id="refreshBtn">
+                            <i class="fas fa-sync-alt"></i> Refresh
+                        </button>
+                    </div>
+                    
+                    <div style="overflow-x: auto;">
+                        <table class="members-table">
+                            <thead>
+                                <tr>
+                                    <th>Member ID</th>
+                                    <th>Name</th>
+                                    <th>Email</th>
+                                    <th>Phone</th>
+                                    <th>Region</th>
+                                    <th>Registration Date</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="membersTableBody">
+                                <!-- Members will be populated here by JavaScript -->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>የብልጽና ፓርቲ ጽ/ቤት</h3>
+                    <p>Committed to building a prosperous, democratic, and united Ethiopia for all citizens.</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" class="nav-link" data-page="home">Home</a></li>
+                        <li><a href="#" class="nav-link" data-page="about">About Us</a></li>
+                        <li><a href="#" class="nav-link" data-page="register">Member Registration</a></li>
+                        <li><a href="#" class="nav-link" data-page="admin">Admin Login</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <ul>
+                        <li><i class="fas fa-map-marker-alt"></i> Addis Ababa, Ethiopia</li>
+                        <li><i class="fas fa-phone"></i> +251 11 123 4567</li>
+                        <li><i class="fas fa-envelope"></i> info@prosperityparty.et</li>
+                    </ul>
+                </div>
             </div>
-        </main>
+            <div class="copyright">
+                <p>&copy; 2023 Ethiopian Prosperity Party. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-        <footer>
-            <p>Ethiopian Prosperity Party &copy; <span id="currentYear"></span></p>
-            <p>Public Relations and Membership Management System</p>
-        </footer>
-    </div>
-
-    <div id="successModal" class="modal">
+    <!-- Modals -->
+    <div id="editModal" class="modal">
         <div class="modal-content">
-            <div class="modal-header success">
-                <i class="fas fa-check-circle"></i>
-                <h3>Registration Successful!</h3>
-            </div>
-            <div class="modal-body">
-                <p>Member has been registered successfully.</p>
-                <div class="member-id-display">
-                    <h4>Member ID:</h4>
-                    <div class="id-number" id="generatedMemberId"></div>
-                    <p class="note">Please save this ID for future reference</p>
+            <span class="close-modal">&times;</span>
+            <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Edit Member Details</h3>
+            <form id="editMemberForm">
+                <input type="hidden" id="editMemberId">
+                <div class="form-group">
+                    <label for="editFirstName">First Name</label>
+                    <input type="text" id="editFirstName" class="form-control" required>
                 </div>
-            </div>
-            <div class="modal-footer">
-                <button onclick="closeModal()" class="btn btn-close">Close</button>
-                <button onclick="printMemberId()" class="btn btn-print">
-                    <i class="fas fa-print"></i> Print ID
-                </button>
-            </div>
+                <div class="form-group">
+                    <label for="editLastName">Last Name</label>
+                    <input type="text" id="editLastName" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="editEmail">Email</label>
+                    <input type="email" id="editEmail" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="editPhone">Phone</label>
+                    <input type="tel" id="editPhone" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="editRegion">Region</label>
+                    <select id="editRegion" class="form-control" required>
+                        <option value="">Select Region</option>
+                        <option value="addis-ababa">Addis Ababa</option>
+                        <option value="afar">Afar</option>
+                        <option value="amhara">Amhara</option>
+                        <option value="benishangul">Benishangul-Gumuz</option>
+                        <option value="dire-dawa">Dire Dawa</option>
+                        <option value="gambela">Gambela</option>
+                        <option value="harari">Harari</option>
+                        <option value="oromia">Oromia</option>
+                        <option value="sidama">Sidama</option>
+                        <option value="somali">Somali</option>
+                        <option value="south-west">South West Ethiopia</option>
+                        <option value="tigray">Tigray</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Save Changes</button>
+                </div>
+            </form>
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <div id="credentialsModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h3 style="color: var(--secondary-color); margin-bottom: 20px;">Change Admin Credentials</h3>
+            <form id="credentialsForm">
+                <div class="form-group">
+                    <label for="newUsername">New Username</label>
+                    <input type="text" id="newUsername" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="currentPassword">Current Password</label>
+                    <input type="password" id="currentPassword" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="newPassword">New Password</label>
+                    <input type="password" id="newPassword" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm New Password</label>
+                    <input type="password" id="confirmPassword" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit" class="btn">Update Credentials</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Sample data for demonstration
+        let members = [
+            {
+                id: "EPP-1001",
+                firstName: "Abebe",
+                lastName: "Kebede",
+                email: "abebe@example.com",
+                phone: "+251911112233",
+                region: "addis-ababa",
+                dob: "1985-05-15",
+                address: "Bole, Addis Ababa",
+                registrationDate: "2023-01-10",
+                photo: null
+            },
+            {
+                id: "EPP-1002",
+                firstName: "Mekdes",
+                lastName: "Tesfaye",
+                email: "mekdes@example.com",
+                phone: "+251922334455",
+                region: "oromia",
+                dob: "1990-08-22",
+                address: "Adama, Oromia",
+                registrationDate: "2023-02-15",
+                photo: null
+            },
+            {
+                id: "EPP-1003",
+                firstName: "Solomon",
+                lastName: "Girma",
+                email: "solomon@example.com",
+                phone: "+251933445566",
+                region: "amhara",
+                dob: "1978-12-05",
+                address: "Bahir Dar, Amhara",
+                registrationDate: "2023-03-20",
+                photo: null
+            }
+        ];
+
+        // Admin credentials (in a real app, these would be stored securely on the server)
+        let adminUsername = "admin";
+        let adminPassword = "password123";
+
+        // Page navigation
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const pageId = this.getAttribute('data-page');
+                
+                // Update active nav link
+                document.querySelectorAll('.nav-link').forEach(nav => nav.classList.remove('active'));
+                this.classList.add('active');
+                
+                // Show selected page
+                document.querySelectorAll('.page').forEach(page => page.classList.remove('active'));
+                document.getElementById(pageId).classList.add('active');
+            });
+        });
+
+        // Photo upload functionality
+        document.getElementById('photoUpload').addEventListener('click', function() {
+            document.getElementById('photo').click();
+        });
+        
+        document.getElementById('photo').addEventListener('change', function(e) {
+            const fileName = e.target.files[0] ? e.target.files[0].name : 'No file chosen';
+            document.getElementById('fileName').textContent = fileName;
+        });
+
+        // Registration form submission
+        document.getElementById('registrationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form values
+            const firstName = document.getElementById('firstName').value;
+            const lastName = document.getElementById('lastName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const region = document.getElementById('region').value;
+            const dob = document.getElementById('dob').value;
+            const address = document.getElementById('address').value;
+            const photo = document.getElementById('photo').files[0];
+            
+            // Check if email or phone already exists
+            const emailExists = members.some(member => member.email === email);
+            const phoneExists = members.some(member => member.phone === phone);
+            
+            // Show error messages if data exists
+            if (emailExists) {
+                document.getElementById('emailError').style.display = 'block';
+                document.getElementById('email').style.borderColor = 'var(--accent-color)';
+                return;
+            } else {
+                document.getElementById('emailError').style.display = 'none';
+                document.getElementById('email').style.borderColor = '#ddd';
+            }
+            
+            if (phoneExists) {
+                document.getElementById('phoneError').style.display = 'block';
+                document.getElementById('phone').style.borderColor = 'var(--accent-color)';
+                return;
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+                document.getElementById('phone').style.borderColor = '#ddd';
+            }
+            
+            // Generate member ID
+            const memberId = `EPP-${1000 + members.length + 1}`;
+            
+            // Add new member to members array
+            const newMember = {
+                id: memberId,
+                firstName,
+                lastName,
+                email,
+                phone,
+                region,
+                dob,
+                address,
+                registrationDate: new Date().toISOString().split('T')[0],
+                photo: photo ? URL.createObjectURL(photo) : null
+            };
+            
+            members.push(newMember);
+            
+            // Show success message and member ID
+            document.getElementById('successMessage').style.display = 'block';
+            document.getElementById('generatedMemberId').textContent = memberId;
+            document.getElementById('memberIdDisplay').style.display = 'block';
+            
+            // Reset form
+            setTimeout(() => {
+                document.getElementById('registrationForm').reset();
+                document.getElementById('fileName').textContent = '';
+                document.getElementById('successMessage').style.display = 'none';
+                document.getElementById('memberIdDisplay').style.display = 'none';
+            }, 5000);
+            
+            // Log the registration
+            console.log('New member registered:', newMember);
+        });
+
+        // Admin login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            
+            if (username === adminUsername && password === adminPassword) {
+                document.getElementById('adminLogin').style.display = 'none';
+                document.getElementById('adminPanel').style.display = 'block';
+                loadMembersTable();
+            } else {
+                alert('Invalid username or password');
+            }
+        });
+
+        // Logout functionality
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            document.getElementById('adminLogin').style.display = 'block';
+            document.getElementById('adminPanel').style.display = 'none';
+            document.getElementById('loginForm').reset();
+        });
+
+        // Load members table
+        function loadMembersTable() {
+            const tableBody = document.getElementById('membersTableBody');
+            tableBody.innerHTML = '';
+            
+            members.forEach(member => {
+                const row = document.createElement('tr');
+                
+                // Format region for display
+                const regionDisplay = member.region.split('-').map(word => 
+                    word.charAt(0).toUpperCase() + word.slice(1)
+                ).join(' ');
+                
+                row.innerHTML = `
+                    <td>${member.id}</td>
+                    <td>${member.firstName} ${member.lastName}</td>
+                    <td>${member.email}</td>
+                    <td>${member.phone}</td>
+                    <td>${regionDisplay}</td>
+                    <td>${member.registrationDate}</td>
+                    <td>
+                        <button class="action-btn edit-btn" data-id="${member.id}">
+                            <i class="fas fa-edit"></i> Edit
+                        </button>
+                        <button class="action-btn delete-btn" data-id="${member.id}">
+                            <i class="fas fa-trash"></i> Delete
+                        </button>
+                    </td>
+                `;
+                
+                tableBody.appendChild(row);
+            });
+            
+            // Add event listeners to edit and delete buttons
+            document.querySelectorAll('.edit-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const memberId = this.getAttribute('data-id');
+                    openEditModal(memberId);
+                });
+            });
+            
+            document.querySelectorAll('.delete-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const memberId = this.getAttribute('data-id');
+                    if (confirm('Are you sure you want to delete this member?')) {
+                        deleteMember(memberId);
+                    }
+                });
+            });
+        }
+
+        // Search functionality
+        document.getElementById('searchMember').addEventListener('input', function() {
+            const searchTerm = this.value.toLowerCase();
+            const rows = document.querySelectorAll('#membersTableBody tr');
+            
+            rows.forEach(row => {
+                const text = row.textContent.toLowerCase();
+                row.style.display = text.includes(searchTerm) ? '' : 'none';
+            });
+        });
+
+        // Refresh button
+        document.getElementById('refreshBtn').addEventListener('click', loadMembersTable);
+
+        // Open edit modal
+        function openEditModal(memberId) {
+            const member = members.find(m => m.id === memberId);
+            if (!member) return;
+            
+            document.getElementById('editMemberId').value = memberId;
+            document.getElementById('editFirstName').value = member.firstName;
+            document.getElementById('editLastName').value = member.lastName;
+            document.getElementById('editEmail').value = member.email;
+            document.getElementById('editPhone').value = member.phone;
+            document.getElementById('editRegion').value = member.region;
+            
+            document.getElementById('editModal').style.display = 'flex';
+        }
+
+        // Save edited member
+        document.getElementById('editMemberForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const memberId = document.getElementById('editMemberId').value;
+            const memberIndex = members.findIndex(m => m.id === memberId);
+            
+            if (memberIndex !== -1) {
+                members[memberIndex].firstName = document.getElementById('editFirstName').value;
+                members[memberIndex].lastName = document.getElementById('editLastName').value;
+                members[memberIndex].email = document.getElementById('editEmail').value;
+                members[memberIndex].phone = document.getElementById('editPhone').value;
+                members[memberIndex].region = document.getElementById('editRegion').value;
+                
+                loadMembersTable();
+                closeModal('editModal');
+            }
+        });
+
+        // Delete member
+        function deleteMember(memberId) {
+            members = members.filter(m => m.id !== memberId);
+            loadMembersTable();
+        }
+
+        // Change credentials modal
+        document.getElementById('changeCredentialsBtn').addEventListener('click', function() {
+            document.getElementById('credentialsModal').style.display = 'flex';
+        });
+
+        // Update credentials
+        document.getElementById('credentialsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const confirmPassword = document.getElementById('confirmPassword').value;
+            const newUsername = document.getElementById('newUsername').value;
+            
+            if (currentPassword !== adminPassword) {
+                alert('Current password is incorrect');
+                return;
+            }
+            
+            if (newPassword !== confirmPassword) {
+                alert('New passwords do not match');
+                return;
+            }
+            
+            adminUsername = newUsername;
+            adminPassword = newPassword;
+            
+            alert('Credentials updated successfully');
+            closeModal('credentialsModal');
+            document.getElementById('credentialsForm').reset();
+        });
+
+        // Close modals
+        document.querySelectorAll('.close-modal').forEach(closeBtn => {
+            closeBtn.addEventListener('click', function() {
+                const modal = this.closest('.modal');
+                modal.style.display = 'none';
+            });
+        });
+
+        // Close modal when clicking outside
+        window.addEventListener('click', function(e) {
+            if (e.target.classList.contains('modal')) {
+                e.target.style.display = 'none';
+            }
+        });
+
+        function closeModal(modalId) {
+            document.getElementById(modalId).style.display = 'none';
+        }
+
+        // Initialize the page
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('Ethiopian Prosperity Party website loaded');
+        });
+    </script>
 </body>
 </html>
+<form id="uploadForm">
+  <input type="file" id="file" required>
+  <button type="submit">Upload</button>
+</form>
+
+<script>
+document.getElementById("uploadForm").onsubmit = async (e) => {
+  e.preventDefault();
+
+  const file = document.getElementById("file").files[0];
+  const reader = new FileReader();
+
+  reader.onload = async () => {
+    const base64 = reader.result.split(",")[1];
+
+    const formData = new FormData();
+    formData.append("file", base64);
+    formData.append("fileName", file.name);
+    formData.append("mimeType", file.type);
+
+    const res = await fetch("YOUR_WEB_APP_URL", {
+      method: "POST",
+      body: formData
+    });
+
+    const data = await res.json();
+    alert("Uploaded! File URL: " + data.fileUrl);
+  };
+
+  reader.readAsDataURL(file);
+};
+<
